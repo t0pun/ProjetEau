@@ -82,6 +82,7 @@ def mouvement_fin(hauteur_max,hauteur_min,nombre_source,scale):
             elif(y[i]>120):
                 y[i]-=10
 
+        print(y)
         data = np.column_stack((np.arange(len(y)),y))
         plt.bar(x,y,align='center',color="blue")
         plt.ylim(hauteur_min,hauteur_max)
@@ -101,12 +102,14 @@ def mouvement_fin(hauteur_max,hauteur_min,nombre_source,scale):
         plt.bar(range(15),tab_temp,color="blue")
         plt.ylim(0,150)
         plt.pause(0.1)
+        print(tab_temp)
     while tab_temp[0]>150:
         tab_temp = init_y
         for u in range(6, -1,-1):
             tab_temp[u]-=10
         for r in range(7,15):
             tab_temp[r]-=10
+        print(tab_temp)
         all_tab.append(tab_temp)
         plt.clf()
         plt.bar(range(15),tab_temp,color="blue")
@@ -118,11 +121,12 @@ def mouvement_fin(hauteur_max,hauteur_min,nombre_source,scale):
         for i in range(len(y)):
             if(y[i]>0):
                 y[i]-=10
+        print(tab_temp)
 
         data = np.column_stack((np.arange(len(y)),y))
         plt.bar(x,y,align='center',color="blue")
         plt.ylim(hauteur_min,hauteur_max)
-        plt.pause(0.1)
+        plt.pause(0.01)
 
     return init_y
 
@@ -130,5 +134,6 @@ init_y = mouvement1(150,0,15,10,init_y,0)
 init_y = mouvement2_iter(150,0,15,10)
 init_y = mouvement1(150,0,15,10,init_y,14)
 init_y = mv3(15)
-mouvement_fin(150,0,15,10)
-plt.show()
+print(mouvement_fin(150,0,15,10))
+
+# plt.show()
