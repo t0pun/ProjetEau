@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from math import *
 
-def f1(t,tab,t_total):
+def f1(t,tab):
     current_tab = tab
     for i in range(len(tab)):
         tab[i]=-10*i+(150-t*10)
@@ -11,25 +11,25 @@ def f1(t,tab,t_total):
             tab[i]=0
     return current_tab
 
-def f2(t,tab,t_total):
+def f2(t,tab):
     current_tab = tab
     for i in range(len(tab)):
         tab[i]=10*i+(-150+t*10)
     return current_tab
 
-def f2bis(t,tab,t_total):
+def f2bis(t,tab):
     current_tab = tab
     for i in range(len(tab)):
         tab[i]=10*i-(t*10)
     return current_tab
 
-def f3(t,tab,t_total):
+def f3(t,tab):
     current_tab = tab
     for i in range(len(tab)):
         tab[i]=abs(10*i-70)-70+t*10
     return current_tab
 
-def f4(t,tab,t_total):
+def f4(t,tab):
     current_tab = tab
     if t>=3:
         for i in range(len(tab)):
@@ -39,7 +39,7 @@ def f4(t,tab,t_total):
             tab[i]=round(((1.4285+2.857*(4-1-t))*abs(i-7)+(10*t+80))/10)*10
     return current_tab
 
-def f5(t,tab,t_total):
+def f5(t,tab):
     current_tab = tab
     for i in range(len(tab)):
         if t<=10:
