@@ -1,6 +1,8 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+matplotlib.use('TkAgg')
 
 def moinsdix(tab):
     z = tab
@@ -24,7 +26,7 @@ def f2(t,tab,t_total):
     for i in range(len(tab)):
         tab[i]=10*i+(-150+t*10)
         if tab[i]<0:
-                tab[i]=0
+            tab[i]=0
     return current_tab
 
 def f2bis(t,tab,t_total):
@@ -64,48 +66,17 @@ x = [i for i in range(15)]
 y= [1 for i in range(15)]
 z = [0 for i in range(15)]
 
-for i in range(15):
-    z = f1(i,z,15)
-    y = z
-    # Création des barres
-    ax.cla()
-    ax.set_ylim(0,15)
-    ax.set_zlim(0,150)
-    for j in range(16):
-        ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
+functions = [f1, f2, f2bis, f3]
+for func in functions:
+    for i in range(15):
+        z = func(i,z,15)
+        y = z
+        ax.cla()
+        ax.set_ylim(0,15)
+        ax.set_zlim(0,150)
+        for j in range(16):
+            ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
+        plt.pause(0.5)
 
-for i in range(15):
-    z = f2(i,z,15)
-    y = z
-    # Création des barres
-    ax.cla()
-    ax.set_ylim(0,15)
-    ax.set_zlim(0,150)
-    for j in range(16):
-        ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
-
-for i in range(15):
-    z = f2bis(i,z,15)
-    y = z
-    # Création des barres
-    ax.cla()
-    ax.set_ylim(0,15)
-    ax.set_zlim(0,150)
-    for j in range(16):
-        ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
-
-for i in range(15):
-    z = f3(i,z,15)
-    y = z
-    # Création des barres
-    ax.cla()
-    ax.set_ylim(0,15)
-    ax.set_zlim(0,150)
-    for j in range(16):
-        ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
 # Affichage de l'histogramme
 plt.show()
