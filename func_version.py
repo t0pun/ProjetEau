@@ -1,6 +1,7 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+from math import *
 
 def f1(t,tab,t_total):
     current_tab = tab
@@ -38,6 +39,15 @@ def f4(t,tab,t_total):
             tab[i]=round(((1.4285+2.857*(4-1-t))*abs(i-7)+(10*t+80))/10)*10
     return current_tab
 
+def f5(t,tab,t_total):
+    current_tab = tab
+    for i in range(len(tab)):
+        if t<=10:
+            tab[i]=(-t*abs(i-7)+120)
+        else:
+            tab[i]=(-10*abs(i-7)+120-(t-10)*10)
+    return current_tab
+
 def mouvement(function,init_y,temps):
     for i in range(0,temps):
         plt.clf()
@@ -55,4 +65,5 @@ mouvement(f2,init_y,15)
 mouvement(f2bis,init_y,15)
 mouvement(f3,init_y,15)
 mouvement(f4,init_y,5)
+print(mouvement(f5,init_y,23))
 plt.show()

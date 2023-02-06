@@ -73,7 +73,7 @@ for i in range(15):
     ax.set_zlim(0,150)
     for j in range(16):
         ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
+    plt.pause(0.1)
 
 for i in range(15):
     z = f2(i,z,15)
@@ -84,7 +84,7 @@ for i in range(15):
     ax.set_zlim(0,150)
     for j in range(16):
         ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
+    plt.pause(0.1)
 
 for i in range(15):
     z = f2bis(i,z,15)
@@ -95,7 +95,7 @@ for i in range(15):
     ax.set_zlim(0,150)
     for j in range(16):
         ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
+    plt.pause(0.1)
 
 for i in range(15):
     z = f3(i,z,15)
@@ -106,6 +106,6 @@ for i in range(15):
     ax.set_zlim(0,150)
     for j in range(16):
         ax.bar3d(x_pos, y_pos+j, z_pos, dx, dy,z,color='blue')
-    plt.pause(0.5)
+    plt.pause(0.1)
 # Affichage de l'histogramme
 plt.show()
