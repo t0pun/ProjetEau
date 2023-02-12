@@ -62,4 +62,4 @@ def show_values():
 show_button = tk.Button(root, text="Simuler", command=show_values)
 show_button.pack(pady=10)
 
-root.mainloop()s
+root.mainloop()
